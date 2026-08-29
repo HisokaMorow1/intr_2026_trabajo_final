@@ -44,21 +44,19 @@ Información disponible:
 
 ```text
 .
-├── clases/
-├── etapa_1/
-│   └── eda_data_fisiologica.ipynb
-├── raw_data/
+├── src/                      # config, data_io, validation, plotting
+├── raw_data/                 # datos crudos (no versionados, ver raw_data/README.md)
 │   ├── ficha_clinica/
 │   ├── genes/
 │   ├── proteins/
-│   └── metadata.json
-├── outputs/
+│   └── metadata/
+├── notebooks/                # 00_setup ... 05_candidates_summary
+├── outputs/                  # datos intermedios entre etapas
 ├── results/
 │   ├── figures/
 │   └── tables/
 └── README.md
 ```
-
 ---
 
 ## Flujo de trabajo
@@ -68,7 +66,7 @@ Información disponible:
 - Dimensiones del dataset
 - Tipos de variables
 - Valores faltantes
-- Variables duplicadas
+- Registros duplicados
 - Estadística descriptiva
 - Histogramas
 - Boxplots
@@ -122,21 +120,8 @@ Información disponible:
 
 ## Resultados
 
-El proyecto genera automáticamente:
-
-- Figuras del análisis exploratorio
-- Gráficos de variables clínicas
-- Correlaciones
-- PCA
-- Tablas resumen
-- Resultados de variantes
-- Resultados de proteínas
-
-Todos los resultados son almacenados en la carpeta:
-
-```text
-results/
-```
+Las figuras y tablas que produzca cada notebook se guardan en `results/`
+(`figures/` y `tables/`), usando las funciones de `src/data_io.py`.
 
 ---
 
@@ -145,7 +130,7 @@ results/
 Clonar el repositorio:
 
 ```bash
-git clone https://github.com/usuario/repositorio.git
+git clone https://github.com/HisokaMorow1/intr_2026_trabajo_final.git
 ```
 
 Instalar dependencias:
@@ -175,3 +160,7 @@ Ejecutar los notebooks siguiendo el orden de las etapas.
 - Cristina Hernández
 - Duvan Figueroa 
 ---
+
+## Uso de inteligencia artificial
+
+Se utilizó inteligencia artificial como apoyo en la organización del código, resolución de dudas, depuración de errores y documentación.
