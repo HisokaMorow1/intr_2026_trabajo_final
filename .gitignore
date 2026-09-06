@@ -12,6 +12,9 @@ env/
 # --- Jupyter ---
 .ipynb_checkpoints/
 
+# --- Resultados generados (no se versionan) ---
+results/
+
 # --- SO / editores ---
 .DS_Store
 .vscode/
