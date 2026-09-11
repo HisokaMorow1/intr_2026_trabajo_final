@@ -19,3 +19,6 @@ results/
 .DS_Store
 .vscode/
 .idea/
+
+# --- CatBoost (se genera solo al entrenar) ---
+catboost_info/

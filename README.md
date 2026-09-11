@@ -45,7 +45,7 @@ Información disponible:
 ```text
 .
 ├── src/                      # config, data_io, validation, plotting
-├── raw_data/                 # datos crudos (no versionados, ver raw_data/README.md)
+├── raw_data/                 # datos crudos (no versionados, se colocan manualmente)
 │   ├── ficha_clinica/
 │   ├── genes/
 │   ├── proteins/
@@ -60,6 +60,11 @@ Información disponible:
 ---
 
 ## Flujo de trabajo
+
+### 0. Setup (`00_setup.ipynb`)
+
+- Verifica que `raw_data/` esté completo
+- Carga y valida columnas, faltantes y duplicados
 
 ### 1. Exploración clínica
 
@@ -101,7 +106,12 @@ Información disponible:
 - Relación DNA → proteína
 - Relación proteína → clínica
 - Comparación entre controles y pacientes
-- Selección de candidatos diferenciales
+- Modelado (CatBoost, PCA, regresión logística)
+
+### 5. Candidatos diferenciales
+
+- Selección de las variantes con mayor puntaje diferencial
+- Resumen y conclusiones del análisis
 
 ---
 
@@ -115,6 +125,7 @@ Información disponible:
 - Seaborn
 - Scikit-learn
 - Biopython
+- CatBoost
 
 ---
 
@@ -139,7 +150,17 @@ Instalar dependencias:
 pip install -r requirements.txt
 ```
 
-Ejecutar los notebooks siguiendo el orden de las etapas.
+Colocar los datos crudos en `raw_data/` (no se versionan), respetando la estructura:
+
+```text
+raw_data/
+├── ficha_clinica/
+├── genes/
+├── proteins/
+└── metadata/
+```
+
+Ejecutar los notebooks siguiendo el orden de las etapas, comenzando por `00_setup.ipynb`.
 
 ---
 
